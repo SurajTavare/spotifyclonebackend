@@ -11,14 +11,14 @@ const songRoutes = require("./routes/song");
 const playlistRoutes = require("./routes/playlist");
 
 const app=express(); 
-const port=8080;
+const port=process.env.port || 8080;
 
 app.use(cors());
 app.use(express.json());
 
 
 //mongoDB connection
-mongoose.connect("mongodb+srv://surajtavare1111:"+process.env.MONGO_PASSWORD+"@cluster0.q90m5wk.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
+mongoose.connect("mongodb+srv://surajtavare1111:"+ process.env.MONGO_PASSWORD+"@cluster0.q90m5wk.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
 // {
 //     useNewUrlParser: true,
 //     useUnifiedTopology: true
